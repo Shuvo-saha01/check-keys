@@ -7,6 +7,7 @@ let wpmText = document.getElementById("wpmText")
 let restart = document.getElementById("restart")
 let loading = document.getElementById("loading")
 let loadRemove = document.getElementById("loadRemove")
+let dummy = document.getElementsByClassName("dummy")
 
 
 let key = "";
@@ -76,6 +77,8 @@ function clock() {
         if(duration === -1){
             clearInterval(timeInterval);
             countWords();
+            sessionStorage.setItem('words' , completeWords )
+            window.location.href = "result.html";
         }
     }, 1000);
     state = false;
@@ -107,3 +110,4 @@ function hide() {
     }, 20);
 
 }
+
